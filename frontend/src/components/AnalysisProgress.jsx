@@ -4,14 +4,14 @@ import { CheckCircle2, Circle, Loader2 } from 'lucide-react';
 
 const AnalysisProgress = ({ currentStep, steps, isAnalyzing }) => {
   const normalForms = [
-    { id: 'upload', name: 'File Upload', description: 'Excel file uploaded successfully' },
-    { id: '1nf', name: '1NF Analysis', description: 'Checking for atomic values and repeating groups' },
-    { id: '2nf', name: '2NF Analysis', description: 'Detecting partial dependencies' },
-    { id: '3nf', name: '3NF Analysis', description: 'Identifying transitive dependencies' },
-    { id: 'bcnf', name: 'BCNF Analysis', description: 'Verifying determinant constraints' },
-    { id: '4nf', name: '4NF Analysis', description: 'Checking multi-valued dependencies' },
-    { id: '5nf', name: '5NF Analysis', description: 'Analyzing join dependencies' },
-    { id: 'generate', name: 'Generate Outputs', description: 'Creating report, SQL script, and Excel file' },
+    { id: 'upload', name: 'Téléchargement du fichier', description: 'Fichier Excel téléchargé avec succès' },
+    { id: '1nf', name: 'Analyse 1NF', description: 'Vérification des valeurs atomiques et groupes répétitifs' },
+    { id: '2nf', name: 'Analyse 2NF', description: 'Détection des dépendances partielles' },
+    { id: '3nf', name: 'Analyse 3NF', description: 'Identification des dépendances transitives' },
+    { id: 'bcnf', name: 'Analyse BCNF', description: 'Vérification des contraintes des déterminants' },
+    { id: '4nf', name: 'Analyse 4NF', description: 'Vérification des dépendances multivaluées' },
+    { id: '5nf', name: 'Analyse 5NF', description: 'Analyse des dépendances de jointure' },
+    { id: 'generate', name: 'Génération des résultats', description: 'Création du rapport, script SQL et fichier Excel' },
   ];
 
   const getStepStatus = (index) => {
@@ -24,7 +24,7 @@ const AnalysisProgress = ({ currentStep, steps, isAnalyzing }) => {
     <div className="w-full max-w-3xl mx-auto">
       <div className="card-gradient">
         <h3 className="text-2xl font-bold text-gray-800 mb-6 text-center">
-          Normalization Analysis Progress
+          Progression de l'Analyse de Normalisation
         </h3>
         
         <div className="space-y-4">
@@ -77,12 +77,12 @@ const AnalysisProgress = ({ currentStep, steps, isAnalyzing }) => {
                 
                 {status === 'completed' && (
                   <div className="flex-shrink-0">
-                    <span className="badge-success">Complete</span>
+                    <span className="badge-success">Terminé</span>
                   </div>
                 )}
                 {status === 'active' && (
                   <div className="flex-shrink-0">
-                    <span className="badge-info">Processing...</span>
+                    <span className="badge-info">En cours...</span>
                   </div>
                 )}
               </motion.div>
@@ -93,7 +93,7 @@ const AnalysisProgress = ({ currentStep, steps, isAnalyzing }) => {
         {/* Progress bar */}
         <div className="mt-6">
           <div className="flex justify-between text-sm text-gray-600 mb-2">
-            <span>Overall Progress</span>
+            <span>Progression globale</span>
             <span>{Math.round((currentStep / normalForms.length) * 100)}%</span>
           </div>
           <div className="w-full bg-gray-200 rounded-full h-3 overflow-hidden">

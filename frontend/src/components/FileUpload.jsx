@@ -45,13 +45,13 @@ const FileUpload = ({ onFileSelect, onUploadComplete }) => {
     const fileExtension = file.name.substring(file.name.lastIndexOf('.')).toLowerCase();
     
     if (!validTypes.includes(file.type) && !validExtensions.includes(fileExtension)) {
-      setError('Please upload a valid Excel file (.xlsx or .xls)');
+      setError('Veuillez télécharger un fichier Excel valide (.xlsx ou .xls)');
       return;
     }
     
     // Validate file size (max 16MB)
     if (file.size > 16 * 1024 * 1024) {
-      setError('File size must be less than 16MB');
+      setError('La taille du fichier doit être inférieure à 16 Mo');
       return;
     }
     
@@ -68,9 +68,9 @@ const FileUpload = ({ onFileSelect, onUploadComplete }) => {
   };
 
   const formatFileSize = (bytes) => {
-    if (bytes === 0) return '0 Bytes';
+    if (bytes === 0) return '0 Octets';
     const k = 1024;
-    const sizes = ['Bytes', 'KB', 'MB'];
+    const sizes = ['Octets', 'Ko', 'Mo'];
     const i = Math.floor(Math.log(bytes) / Math.log(k));
     return Math.round(bytes / Math.pow(k, i) * 100) / 100 + ' ' + sizes[i];
   };
@@ -111,19 +111,19 @@ const FileUpload = ({ onFileSelect, onUploadComplete }) => {
             </motion.div>
             
             <h3 className="text-2xl font-bold text-gray-800 mb-2">
-              {isDragging ? 'Drop your file here' : 'Upload Excel File'}
+              {isDragging ? 'Déposez votre fichier ici' : 'Télécharger un fichier Excel'}
             </h3>
             
             <p className="text-gray-600 mb-6">
-              Drag and drop your Excel file here, or click to browse
+              Glissez et déposez votre fichier Excel ici, ou cliquez pour parcourir
             </p>
             
             <label htmlFor="file-upload" className="btn-primary cursor-pointer inline-block">
-              Choose File
+              Choisir un fichier
             </label>
             
             <p className="text-sm text-gray-500 mt-4">
-              Supported formats: .xlsx, .xls (Max size: 16MB)
+              Formats supportés: .xlsx, .xls (Taille max: 16 Mo)
             </p>
           </motion.div>
         ) : (
@@ -157,7 +157,7 @@ const FileUpload = ({ onFileSelect, onUploadComplete }) => {
             {uploadProgress > 0 && uploadProgress < 100 && (
               <div className="mb-4">
                 <div className="flex justify-between text-sm text-gray-600 mb-2">
-                  <span>Uploading...</span>
+                  <span>Téléchargement...</span>
                   <span>{uploadProgress}%</span>
                 </div>
                 <div className="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
@@ -178,7 +178,7 @@ const FileUpload = ({ onFileSelect, onUploadComplete }) => {
                     <path d="M5 13l4 4L19 7"></path>
                   </svg>
                 </div>
-                <span className="font-medium">Upload complete!</span>
+                <span className="font-medium">Téléchargement terminé!</span>
               </div>
             )}
           </motion.div>

@@ -36,7 +36,7 @@ This guide explains how to deploy the Normalization Engine application. We recom
     - **Note**: A `.python-version` file is included in the project root to ensure Render uses Python 3.11, which is required for dependencies like pandas.
     - **Build Command**: `pip install -r requirements.txt && npm install`
       _(Note: We add npm install because your backend uses a Node.js script for report generation)_
-    - **Start Command**: `gunicorn run:app`
+    - **Start Command**: `gunicorn -b 0.0.0.0:$PORT run:app`
     - **Environment Variables**:
       - `FLASK_ENV`: `production`
       - `PORT`: `5000`

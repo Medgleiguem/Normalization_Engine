@@ -55,7 +55,7 @@ const HomePage = () => {
 
     } catch (err) {
       console.error('Analysis error:', err);
-      setError(err.response?.data?.error || err.message || 'An error occurred during analysis');
+      setError(err.response?.data?.error || err.message || 'Une erreur est survenue lors de l\'analyse');
       setCurrentPhase('upload');
     }
   };
@@ -85,20 +85,20 @@ const HomePage = () => {
           </div>
           
           <h1 className="text-5xl font-bold mb-4">
-            <span className="text-gradient">Database Normalization</span>
+            <span className="text-gradient">Normalisation de Base de Données</span>
             <br />
-            <span className="text-gray-800">Analysis Tool</span>
+            <span className="text-gray-800">Outil d'Analyse</span>
           </h1>
           
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Upload your Excel file and get a comprehensive normalization analysis with 
-            academic-standard reports, MySQL scripts, and normalized data
+            Téléchargez votre fichier Excel et obtenez une analyse complète de normalisation avec
+            des rapports académiques, des scripts MySQL et des données normalisées
           </p>
           
           <div className="flex justify-center items-center space-x-2 mt-6">
             <Sparkles className="w-5 h-5 text-yellow-500" />
             <span className="text-sm font-medium text-gray-700">
-              Powered by AI-driven dependency detection
+              Propulsé par la détection de dépendances via IA
             </span>
           </div>
         </motion.div>
@@ -115,7 +115,7 @@ const HomePage = () => {
               onClick={handleReset}
               className="mt-2 text-red-600 hover:text-red-800 font-medium text-sm underline"
             >
-              Try again
+              Réessayer
             </button>
           </motion.div>
         )}
@@ -142,7 +142,7 @@ const HomePage = () => {
                     onClick={handleStartAnalysis}
                     className="btn-primary inline-flex items-center space-x-2 text-lg px-8 py-4"
                   >
-                    <span>Start Analysis</span>
+                    <span>Lancer l'Analyse</span>
                     <ArrowRight className="w-5 h-5" />
                   </button>
                 </motion.div>
@@ -176,7 +176,7 @@ const HomePage = () => {
                   onClick={handleReset}
                   className="btn-secondary inline-flex items-center space-x-2"
                 >
-                  <span>Analyze Another File</span>
+                  <span>Analyser un autre fichier</span>
                 </button>
               </div>
             </motion.div>
@@ -195,9 +195,9 @@ const HomePage = () => {
               <div className="p-3 bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
                 <FileText className="w-8 h-8 text-blue-600" />
               </div>
-              <h3 className="font-bold text-lg text-gray-800 mb-2">Academic Report</h3>
+              <h3 className="font-bold text-lg text-gray-800 mb-2">Rapport Académique</h3>
               <p className="text-gray-600 text-sm">
-                University-standard report with theoretical background and step-by-step analysis
+                Rapport standard universitaire avec contexte théorique et analyse étape par étape
               </p>
             </div>
 
@@ -205,9 +205,9 @@ const HomePage = () => {
               <div className="p-3 bg-purple-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
                 <Database className="w-8 h-8 text-purple-600" />
               </div>
-              <h3 className="font-bold text-lg text-gray-800 mb-2">MySQL Script</h3>
+              <h3 className="font-bold text-lg text-gray-800 mb-2">Script MySQL</h3>
               <p className="text-gray-600 text-sm">
-                Production-ready SQL with best practices, constraints, and comprehensive comments
+                SQL prêt pour la production avec meilleures pratiques, contraintes et commentaires complets
               </p>
             </div>
 
@@ -215,9 +215,9 @@ const HomePage = () => {
               <div className="p-3 bg-green-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
                 <FileSpreadsheet className="w-8 h-8 text-green-600" />
               </div>
-              <h3 className="font-bold text-lg text-gray-800 mb-2">Normalized Excel</h3>
+              <h3 className="font-bold text-lg text-gray-800 mb-2">Excel Normalisé</h3>
               <p className="text-gray-600 text-sm">
-                Normalized data with metadata, data dictionary, and relationship diagrams
+                Données normalisées avec métadonnées, dictionnaire de données et diagrammes relationnels
               </p>
             </div>
           </motion.div>

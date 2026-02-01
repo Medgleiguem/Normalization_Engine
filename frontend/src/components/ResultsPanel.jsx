@@ -36,10 +36,10 @@ const ResultsPanel = ({ analysisResult }) => {
           </div>
         </div>
         <h2 className="text-3xl font-bold text-gray-800 mb-2">
-          Analysis Complete!
+          Analyse Terminée !
         </h2>
         <p className="text-lg text-gray-600">
-          Your database has been successfully normalized
+          Votre base de données a été normalisée avec succès
         </p>
       </motion.div>
 
@@ -56,7 +56,7 @@ const ResultsPanel = ({ analysisResult }) => {
               <TrendingUp className="w-6 h-6 text-blue-600" />
             </div>
             <div>
-              <p className="text-sm text-gray-600">Normalization</p>
+              <p className="text-sm text-gray-600">Normalisation</p>
               <p className="text-xl font-bold text-gray-800">{original_nf} → {final_nf}</p>
             </div>
           </div>
@@ -73,7 +73,7 @@ const ResultsPanel = ({ analysisResult }) => {
               <Database className="w-6 h-6 text-purple-600" />
             </div>
             <div>
-              <p className="text-sm text-gray-600">Tables Created</p>
+              <p className="text-sm text-gray-600">Tables Créées</p>
               <p className="text-xl font-bold text-gray-800">{tables_count}</p>
             </div>
           </div>
@@ -90,7 +90,7 @@ const ResultsPanel = ({ analysisResult }) => {
               <CheckCircle className="w-6 h-6 text-green-600" />
             </div>
             <div>
-              <p className="text-sm text-gray-600">Steps Applied</p>
+              <p className="text-sm text-gray-600">Étapes Appliquées</p>
               <p className="text-xl font-bold text-gray-800">{steps_count}</p>
             </div>
           </div>
@@ -107,7 +107,7 @@ const ResultsPanel = ({ analysisResult }) => {
               <FileText className="w-6 h-6 text-red-600" />
             </div>
             <div>
-              <p className="text-sm text-gray-600">Violations Fixed</p>
+              <p className="text-sm text-gray-600">Violations Corrigées</p>
               <p className="text-xl font-bold text-gray-800">{violations_count}</p>
             </div>
           </div>
@@ -121,7 +121,7 @@ const ResultsPanel = ({ analysisResult }) => {
         transition={{ delay: 0.5 }}
         className="card-gradient"
       >
-        <h3 className="text-2xl font-bold text-gray-800 mb-6">Download Results</h3>
+        <h3 className="text-2xl font-bold text-gray-800 mb-6">Télécharger les Résultats</h3>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <button
@@ -133,14 +133,14 @@ const ResultsPanel = ({ analysisResult }) => {
                 <FileText className="w-8 h-8 text-blue-600" />
               </div>
               <div>
-                <h4 className="font-semibold text-lg text-gray-800">Academic Report</h4>
+                <h4 className="font-semibold text-lg text-gray-800">Rapport Académique</h4>
                 <p className="text-sm text-gray-600 mt-1">
-                  Comprehensive analysis report (DOCX)
+                  Rapport d'analyse complet (DOCX)
                 </p>
               </div>
               <div className="flex items-center space-x-2 text-primary-600 font-medium">
                 <Download className="w-4 h-4" />
-                <span>Download</span>
+                <span>Télécharger</span>
               </div>
             </div>
           </button>
@@ -154,14 +154,14 @@ const ResultsPanel = ({ analysisResult }) => {
                 <Database className="w-8 h-8 text-purple-600" />
               </div>
               <div>
-                <h4 className="font-semibold text-lg text-gray-800">MySQL Script</h4>
+                <h4 className="font-semibold text-lg text-gray-800">Script MySQL</h4>
                 <p className="text-sm text-gray-600 mt-1">
-                  Database creation script (SQL)
+                  Script de création de base de données (SQL)
                 </p>
               </div>
               <div className="flex items-center space-x-2 text-primary-600 font-medium">
                 <Download className="w-4 h-4" />
-                <span>Download</span>
+                <span>Télécharger</span>
               </div>
             </div>
           </button>
@@ -175,14 +175,14 @@ const ResultsPanel = ({ analysisResult }) => {
                 <FileSpreadsheet className="w-8 h-8 text-green-600" />
               </div>
               <div>
-                <h4 className="font-semibold text-lg text-gray-800">Normalized Excel</h4>
+                <h4 className="font-semibold text-lg text-gray-800">Excel Normalisé</h4>
                 <p className="text-sm text-gray-600 mt-1">
-                  Normalized data tables (XLSX)
+                  Tables de données normalisées (XLSX)
                 </p>
               </div>
               <div className="flex items-center space-x-2 text-primary-600 font-medium">
                 <Download className="w-4 h-4" />
-                <span>Download</span>
+                <span>Télécharger</span>
               </div>
             </div>
           </button>
@@ -197,7 +197,7 @@ const ResultsPanel = ({ analysisResult }) => {
           transition={{ delay: 0.6 }}
           className="card"
         >
-          <h3 className="text-2xl font-bold text-gray-800 mb-6">Normalization Steps</h3>
+          <h3 className="text-2xl font-bold text-gray-800 mb-6">Étapes de Normalisation</h3>
           
           <div className="space-y-4">
             {steps.map((step, index) => (
@@ -207,7 +207,7 @@ const ResultsPanel = ({ analysisResult }) => {
               >
                 <div className="flex items-center justify-between mb-2">
                   <h4 className="font-semibold text-lg text-gray-800">
-                    Step {index + 1}: {step.from_nf} → {step.to_nf}
+                    Étape {index + 1}: {step.from_nf} → {step.to_nf}
                   </h4>
                   <span className="badge-warning">
                     {step.violations} violation{step.violations !== 1 ? 's' : ''}
