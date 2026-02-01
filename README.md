@@ -188,40 +188,10 @@ The frontend will run on `http://localhost:3000`
 - **SQL Script**: MySQL schema with constraints, indexes, and comments
 - **Excel File**: Normalized tables with metadata and relationships
 
-## Best Practices Implemented
-
-### Backend
-
-- ✅ Modular architecture with separation of concerns
-- ✅ Service layer pattern for business logic
-- ✅ Data models for type safety
-- ✅ Comprehensive error handling
-- ✅ Environment-based configuration
-- ✅ CORS configuration for security
-- ✅ File validation and cleanup
-
-### Frontend
-
-- ✅ Component-based architecture
-- ✅ Custom hooks for reusability
-- ✅ Responsive design with Tailwind CSS
-- ✅ Smooth animations with Framer Motion
-- ✅ Error boundaries and user feedback
-- ✅ Accessibility considerations
-- ✅ SEO optimization
-
-### Code Quality
-
-- ✅ Clean, readable code with comments
-- ✅ Consistent naming conventions
-- ✅ DRY (Don't Repeat Yourself) principles
-- ✅ Single Responsibility Principle
-- ✅ Proper file organization
-
 ## License
 
 MIT
 
 ## Author
 
-Created with ❤️ using AI-powered development
+Created with ❤️ by Med GLEIGUEM for uni project
