@@ -188,36 +188,6 @@ The frontend will run on `http://localhost:3000`
 - **SQL Script**: MySQL schema with constraints, indexes, and comments
 - **Excel File**: Normalized tables with metadata and relationships
 
-## Deployment
-
-### Backend Deployment (Render, Railway, Heroku)
-
-1. Set environment variables:
-
-```
-FLASK_ENV=production
-SECRET_KEY=your-secure-secret-key
-PORT=5000
-```
-
-2. The app is configured to run with Gunicorn in production
-
-### Frontend Deployment (Vercel, Netlify)
-
-1. Build the frontend:
-
-```bash
-npm run build
-```
-
-2. Set environment variable:
-
-```
-VITE_API_URL=https://your-backend-url.com/api
-```
-
-3. Deploy the `dist` folder
-
 ## Best Practices Implemented
 
 ### Backend
