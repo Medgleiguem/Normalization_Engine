@@ -7,7 +7,7 @@ from app.models.table_model import Table, Column, FunctionalDependency, MultiVal
 from app.models.analysis_result import (
     AnalysisResult, NormalizationStep, Violation, NormalForm
 )
-from app.services.ai_dependency_detector import AIDependencyDetector
+from app.services.improved_ai_dependency_detector import ImprovedAIDependencyDetector
 
 class NormalizationEngine:
     """Main engine for database normalization analysis"""
@@ -15,12 +15,24 @@ class NormalizationEngine:
     def __init__(self, table: Table):
         self.original_table = deepcopy(table)
         self.current_tables = [table]
-        self.detector = AIDependencyDetector()
+        self.detector = ImprovedAIDependencyDetector()
         
         # Detect dependencies if not already present
         if not table.functional_dependencies:
-            fds, mvds, keys = self.detector.detect_all_dependencies(table)
-            table.functional_dependencies = fds
+            fds, keys = self.detector.detect_all_dependencies(table.data, table.get_column_names())
+            
+            # Convert fds from dict format to FunctionalDependency objects
+            from app.models.table_model import FunctionalDependency
+            table.functional_dependencies = [
+                FunctionalDependency(
+                    determinant=fd['determinant'],
+                    dependent=fd['dependent'],
+                    confidence=fd['confidence']
+                )
+                for fd in fds
+            ]
+            # Note: MVDs are not currently detected by ImprovedAIDependencyDetector
+            mvds = []
             table.multi_valued_dependencies = mvds
             if keys and not table.primary_key:
                 table.candidate_keys = keys
